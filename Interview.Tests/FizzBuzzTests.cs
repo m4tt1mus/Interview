@@ -67,13 +67,13 @@ namespace Interview.Tests
             Assert.AreEqual(100, result.Count());
         }
 
-        //[Test]
-        //public void OneBillionTest()
-        //{
-        //    var fb = new FizzBuzz();
-        //    var result = fb.Run().Take(1000000000).Last();
+        [Test]
+        public void OneBillionTest()
+        {
+            var fb = new FizzBuzz();
+            var result = fb.Run().Take(1000000000).Last();
 
-        //    Assert.AreEqual("Buzz", result);
-        //}
+            Assert.AreEqual("Buzz", result);
+        }
     }
 }
