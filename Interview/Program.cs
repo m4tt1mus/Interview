@@ -12,8 +12,7 @@ namespace Interview
         public static void Main(string[] args)
         {
             var fb = new FizzBuzz();
-            var fizzBuzzes = fb.Run().Take(100).ToList();
-            foreach (var fizzBuzz in fizzBuzzes)
+            foreach (var fizzBuzz in fb.Run().Take(100))
             {
                 Console.WriteLine(fizzBuzz);
             }
