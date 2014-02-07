@@ -32,16 +32,14 @@ namespace Util
 
         }
 
+        /// <summary>
+        /// Order of your FizzBuzzRequest is important. Which everyone hits first will return.
+        /// </summary>
         public FizzBuzz(List<FizzBuzzRequest> fizzBuzzRequests)
         {
             _fizzBuzzRequests = fizzBuzzRequests;
         }
 
-
-        /// <summary>
-        /// 
-        /// Order of your FizzBuzzRequest is important. Which everyone hits first will return.
-        /// </summary>
         public IEnumerable<string> Run()
         {
             long i = 0;
@@ -53,7 +51,7 @@ namespace Util
 
                 foreach (var fizzBuzzRequest in _fizzBuzzRequests)
                 {
-                    if (fizzBuzzRequest.Check(i))
+                    if (!resultSent && fizzBuzzRequest.Check(i))
                     {
                         yield return fizzBuzzRequest.Result;
                         resultSent = true;
