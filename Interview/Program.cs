@@ -11,7 +11,7 @@ namespace Interview
     {
         public static void Main(string[] args)
         {
-            foreach (var output in FizzBuzz.Run().Take(1000000000))
+            foreach (var output in FizzBuzz.Run().Take(100))
             {
                 Console.WriteLine(output);
             }

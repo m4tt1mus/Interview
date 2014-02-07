@@ -20,38 +20,45 @@ namespace Interview.Tests
             Assert.AreEqual("2", result[1]);
         }
 
-        //[Test]
-        //public void TestFizz()
-        //{
-        //    var fb = new Program();
+        [Test]
+        public void TestFizz()
+        {
+            var result = FizzBuzz.Run().Take(3).Last();
 
-        //    var result = Program.Run(1, 3).ToArray().Last();
+            Assert.AreEqual("Fizz", result);
+        }
 
-        //    Assert.AreEqual("Fizz", result);
-        //}
+        [Test]
+        public void TestBuzz()
+        {
+            var result = FizzBuzz.Run().Take(5).Last();
 
-        //[Test]
-        //public void TestBuzz()
-        //{
-        //    var result = Program.Run(1, 5).ToArray().Last();
+            Assert.AreEqual("Buzz", result);
+        }
 
-        //    Assert.AreEqual("Buzz", result);
-        //}
+        [Test]
+        public void TestFizzBuzz()
+        {
+            var result = FizzBuzz.Run().Take(15).Last();
 
-        //[Test]
-        //public void TestFizzBuzz()
-        //{
-        //    var result = Program.Run(1, 15).ToArray().Last();
+            Assert.AreEqual("FizzBuzz", result);
+        }
 
-        //    Assert.AreEqual("FizzBuzz", result);
-        //}
+        [Test]
+        public void SkipOneTakeTwo()
+        {
+            var result = FizzBuzz.Run().Skip(1).Take(2).ToArray();
 
-        //[Test]
-        //public void TestLowerStartNumberThenEndNumber()
-        //{
-        //    var result = Program.Run(12, 1);
+            Assert.AreEqual("2", result[0]);
+            Assert.AreEqual("Fizz", result[1]);
+        }
 
-        //    Assert.IsEmpty(result);
-        //}
+        [Test]
+        public void OneBillionTest()
+        {
+            var result = FizzBuzz.Run().Take(1000000000).Last();
+
+            Assert.AreEqual("Buzz", result);
+        }
     }
 }
