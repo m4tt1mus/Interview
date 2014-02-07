@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
+using Util;
 
 namespace Interview
 {
@@ -11,12 +11,11 @@ namespace Interview
     {
         public static void Main(string[] args)
         {
-            var fb = new FizzBuzz.FizzBuzz();
-            IEnumerable<string> outputs = fb.Run(100, 1);
-            foreach (var output in outputs)
+            foreach (var output in FizzBuzz.Run().Take(1000000000))
             {
                 Console.WriteLine(output);
             }
+
             Console.ReadKey();
         }
     }

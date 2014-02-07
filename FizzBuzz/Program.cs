@@ -8,10 +8,10 @@ namespace FizzBuzz
 {
     public class Program
     {
-        public IEnumerable<string> Run()
-        {
-            return Run(1, 100);
-        }
+        //public IEnumerable<string> Run()
+        //{
+        //    return Run().Take(1);
+        //}
 
         /// <summary>
         /// 
@@ -19,36 +19,35 @@ namespace FizzBuzz
         /// <param name="start"></param>
         /// <param name="end"></param>
         /// <returns></returns>
-        public IEnumerable<string> Run(int start, int end)
+        public static IEnumerable<string> Run()
         {
-            var result = new List<string>();
+            long i = 1;
+            yield return i.ToString();
 
-            var diff = end - start;
-            if (diff > 1000)
-                return result;
-
-            for (int i = start; i < end + 1; i++)
+            while (true)
             {
-                if (i % 3 == 0 && i % 5 == 0)
-                {
-                    result.Add("FizzBuzz");
-                }
-                else if (i % 3 == 0)
-                {
-                    result.Add("Fizz");
-                }
-                else if (i % 5 == 0)
-                {
-                    result.Add("Buzz");
-                }
-                else
-                {
-                    result.Add(i.ToString());
-                }
-
+                i++;
+                yield return i.ToString();
             }
+            //for (int i = start; i < end + 1; i++)
+            //{
+            //    if (i % 3 == 0 && i % 5 == 0)
+            //    {
+            //        yield return "FizzBuzz";
+            //    }
+            //    else if (i % 3 == 0)
+            //    {
+            //        yield return "Fizz";
+            //    }
+            //    else if (i % 5 == 0)
+            //    {
+            //        yield return "Buzz";
+            //    }
+            //    else
+            //    {
+            //        yield return i.ToString();
+            //    }
 
-            return result;
         }
     }
 }
