@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FizzBuzz
 {
-    public class FizzBuzz
+    public class Program
     {
         public IEnumerable<string> Run()
         {
